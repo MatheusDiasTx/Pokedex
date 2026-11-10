@@ -7,7 +7,6 @@ Pokédex interativa com os 493 Pokémon da 1ª à 4ª geração (Kanto, Johto, H
 ## Integrantes
 
 - Matheus Teixeira Dias de Andrade
-- (nome da dupla)
 
 ## Funcionalidades
 
