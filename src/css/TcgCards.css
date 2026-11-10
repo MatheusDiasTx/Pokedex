@@ -1,0 +1,267 @@
+.tcg-pokemon-card {
+  padding: 8px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f7d02c, #e0a800);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+  animation: appear 0.3s ease;
+}
+
+.tcg-pokemon-card:hover {
+  transform: translateY(-6px) rotate(-1.5deg);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.25);
+}
+
+.tcg-inner {
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.tcg-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 6px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.tcg-top span {
+  font-size: 13px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.tcg-art {
+  margin: 8px 0;
+  background: rgba(255, 255, 255, 0.85);
+  border: 3px solid #e0a800;
+  border-radius: 4px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tcg-art img {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  transition: transform 0.25s;
+}
+
+.tcg-pokemon-card:hover .tcg-art img {
+  transform: scale(1.1);
+}
+
+.tcg-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.tcg-bottom .type-badge {
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.tcg-id {
+  font-weight: bold;
+  font-size: 13px;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.tcg-hint {
+  margin-top: auto;
+  padding-top: 8px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  opacity: 0.9;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.tcg-modal {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 24px;
+  animation: slide 0.25s ease;
+}
+
+.tcg-modal-header {
+  text-align: center;
+  margin-bottom: 18px;
+}
+
+.tcg-modal-header span {
+  font-weight: bold;
+  color: var(--muted);
+}
+
+.tcg-modal-header p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tcg-message {
+  text-align: center;
+  padding: 40px 10px;
+  color: var(--muted);
+}
+
+.tcg-loading {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  border: 5px solid #eee;
+  border-top-color: var(--red);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 10px;
+}
+
+.rarity-filter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.rarity-button {
+  padding: 6px 14px;
+  border: 2px solid #e0a800;
+  border-radius: 20px;
+  background: #fff;
+  color: #8a6500;
+  font-size: 13px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.rarity-button:hover,
+.rarity-button.selected {
+  background: linear-gradient(135deg, #f7d02c, #e0a800);
+  color: #3d2c00;
+}
+
+.tcg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.tcg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  font-size: 12px;
+  transition: transform 0.2s;
+}
+
+.tcg-card:hover {
+  transform: translateY(-5px) scale(1.03);
+}
+
+.tcg-card img {
+  width: 100%;
+  aspect-ratio: 245 / 342;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #eee;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+}
+
+.tcg-card-rarity {
+  font-weight: bold;
+  color: #8a6500;
+}
+
+.tcg-card-set {
+  color: var(--muted);
+  text-align: center;
+}
+
+.tcg-zoom {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 20px;
+  z-index: 20;
+  animation: fade 0.2s ease;
+  cursor: pointer;
+}
+
+.tcg-zoom img {
+  max-height: 85vh;
+  max-width: 60vw;
+  border-radius: 14px;
+  box-shadow: 0 0 40px rgba(247, 208, 44, 0.5);
+  animation: zoom 0.3s ease;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.8) rotateY(30deg);
+  }
+}
+
+.tcg-zoom-info {
+  color: #fff;
+  max-width: 260px;
+  line-height: 1.7;
+}
+
+.tcg-zoom-info h3 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.tcg-zoom-hint {
+  margin-top: 12px;
+  opacity: 0.6;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .tcg-modal {
+    padding: 18px 12px;
+  }
+
+  .tcg-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .tcg-zoom {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .tcg-zoom img {
+    max-width: 90vw;
+    max-height: 65vh;
+  }
+
+  .tcg-zoom-info {
+    text-align: center;
+    line-height: 1.5;
+  }
+}

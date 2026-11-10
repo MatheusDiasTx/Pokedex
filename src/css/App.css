@@ -1,0 +1,39 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+.result-count {
+  color: var(--muted);
+  margin: 12px 0;
+  font-size: 14px;
+}
+
+.section-title {
+  margin-bottom: 20px;
+}
+
+.footer {
+  text-align: center;
+  padding: 16px;
+  color: #fff;
+  background: var(--dark-red);
+  font-size: 14px;
+}
+
+.page-intro {
+  margin-bottom: 16px;
+}
+
+.page-intro p {
+  color: var(--muted);
+}

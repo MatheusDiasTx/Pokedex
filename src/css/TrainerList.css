@@ -1,0 +1,159 @@
+.trainer-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.trainer-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--red);
+  transition: transform 0.2s;
+}
+
+.trainer-card:hover {
+  transform: translateY(-4px);
+}
+
+.trainer-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trainer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--red), var(--dark-red));
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trainer-badges {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.trainer-subtitle {
+  margin: 14px 0 8px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.trainer-pokemon {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trainer-poke {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 78px;
+  padding: 6px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  background: #fafafa;
+  font-size: 11px;
+  transition: 0.2s;
+}
+
+.trainer-poke:hover {
+  background: #fff0ec;
+  border-color: var(--red);
+}
+
+.trainer-poke img {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+}
+
+@media (max-width: 480px) {
+  .trainer-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.region-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.region-button {
+  padding: 8px 22px;
+  border: 2px solid var(--red);
+  border-radius: 20px;
+  background: #fff;
+  color: var(--red);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.region-button:hover,
+.region-button.selected {
+  background: var(--red);
+  color: #fff;
+}
+
+.trainer-group {
+  margin-bottom: 32px;
+}
+
+.group-title {
+  margin-bottom: 14px;
+  padding-left: 10px;
+  border-left: 4px solid var(--red);
+}
+
+.trainer-role {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--red);
+}
+
+.trainer-card.elite4 {
+  border-top-color: #6f35fc;
+}
+
+.trainer-card.elite4 .trainer-avatar {
+  background: linear-gradient(135deg, #6f35fc, #3b1a8a);
+}
+
+.trainer-card.elite4 .trainer-role {
+  color: #6f35fc;
+}
+
+.trainer-card.champion {
+  border-top-color: #e0a800;
+}
+
+.trainer-card.champion .trainer-avatar {
+  background: linear-gradient(135deg, #f7d02c, #c08a00);
+}
+
+.trainer-card.champion .trainer-role {
+  color: #b07d00;
+}
+
+.trainer-card.other {
+  border-top-color: #777;
+}
+
+.trainer-card.other .trainer-avatar {
+  background: linear-gradient(135deg, #888, #555);
+}
+
+.trainer-card.other .trainer-role {
+  color: #666;
+}

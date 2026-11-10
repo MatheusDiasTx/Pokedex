@@ -1,0 +1,27 @@
+.type-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.type-button {
+  padding: 6px 14px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  opacity: 0.7;
+  transition: 0.2s;
+}
+
+.type-button:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+.type-button.selected {
+  opacity: 1;
+  border-color: #222;
+  transform: scale(1.08);
+}
